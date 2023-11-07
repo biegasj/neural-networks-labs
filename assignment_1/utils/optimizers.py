@@ -33,7 +33,9 @@ class MiniBatchOptimizer:
         total_batches = X.shape[0] // self.batch_size
         precision = np.std(y) if not self.classification else None
 
-        print(f"Started optimization of {self.neural_network.__class__.__name__}, classification={self.classification}")
+        print(
+            f"Started optimization of {self.neural_network.__class__.__name__}, classification={self.classification}"
+        )
         for epoch_index in range(self.epochs):
             for batch_index in range(total_batches):
                 X_batch, y_batch = self._get_batch(batch_index, X, y)
