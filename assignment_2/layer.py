@@ -60,8 +60,10 @@ class DropoutLayer:
 
     def forward(self, inputs: np.ndarray) -> np.ndarray:
         self.inputs = inputs
-        self.mask = np.random.binomial(1, 1 - self.dropout_rate, size=self.inputs.shape)
-        self.outputs = self.inputs * self.mask / (1 - self.dropout_rate)
+        self.mask = np.random.binomial(
+            1, 1 - self.dropout_rate, size=self.inputs.shape
+        ) / (1 - self.dropout_rate)
+        self.outputs = self.inputs * self.mask
         return self.outputs
 
     def backward(self, d_values: np.ndarray) -> np.ndarray:

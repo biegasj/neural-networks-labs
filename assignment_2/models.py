@@ -39,9 +39,11 @@ class NeuralNetwork:
     def num_hidden_layers(self) -> int:
         return len(self.hidden_layers)
 
-    def forward(self, inputs: np.ndarray) -> np.ndarray:
+    def forward(self, inputs: np.ndarray, training: bool = True) -> np.ndarray:
         outputs = self.input_layer.forward(inputs)
         for layer in self.hidden_layers:
+            if not training and not isinstance(layer, Layer):
+                continue
             outputs = layer.forward(outputs)
         return self.output_layer.forward(outputs)
 
