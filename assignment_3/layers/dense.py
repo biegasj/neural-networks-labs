@@ -1,10 +1,11 @@
 import numpy as np
 
+from assignment_3.layers.base import Layer
 from assignment_3.utils.activation_functions import ActivationFunction
 from assignment_3.utils.weights import WeightInitializer
 
 
-class DenseLayer:
+class DenseLayer(Layer):
     def __init__(
         self,
         input_dim: int,

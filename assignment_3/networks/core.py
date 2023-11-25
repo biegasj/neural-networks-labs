@@ -1,6 +1,6 @@
 import numpy as np
 
-from assignment_2.layer import InputLayer, Layer
+from assignment_3.layers import InputLayer, Layer
 
 
 class NeuralNetwork:

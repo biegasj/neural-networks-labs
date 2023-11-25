@@ -1,9 +1,9 @@
 import numpy as np
 
-from assignment_2.layer import Layer
-from assignment_2.models import NeuralNetwork
-from assignment_2.utils.loss_functions import LossFunction
-from assignment_2.utils.metrics import classification_accuracy, regression_accuracy
+from assignment_3.layers import Layer
+from assignment_3.networks import NeuralNetwork
+from assignment_3.utils.loss_functions import LossFunction
+from assignment_3.utils.metrics import classification_accuracy, regression_accuracy
 
 
 class MiniBatchOptimizer:

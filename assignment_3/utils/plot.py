@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from assignment_2.layer import Layer
-from assignment_2.models import NeuralNetwork
+from assignment_3.layers import Layer
+from assignment_3.networks import NeuralNetwork
 
 FASHION_MNIST_LABELS = {
     0: "T-shirt/top",

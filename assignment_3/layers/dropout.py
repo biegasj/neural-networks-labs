@@ -1,7 +1,9 @@
 import numpy as np
 
+from assignment_3.layers.base import Layer
 
-class DropoutLayer:
+
+class DropoutLayer(Layer):
     def __init__(self, dropout_rate: float):
         self.dropout_rate = dropout_rate
         self.mask = None
