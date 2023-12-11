@@ -1,7 +1,7 @@
 import numpy as np
 
 from assignment_3.layers import Layer
-from assignment_3.networks import NeuralNetwork
+from assignment_3.networks.core import NeuralNetwork
 
 
 class Autoencoder(NeuralNetwork):

@@ -24,7 +24,9 @@ class DenseLayer(Layer):
         self.inputs: np.ndarray | None = None
         self.outputs: np.ndarray | None = None
         # Attributes related to backward pass
+        self.d_weights: np.ndarray | None = None
         self.d_inputs: np.ndarray | None = None
+        self.d_biases: np.ndarray | None = None
 
     def forward(self, inputs: np.ndarray) -> np.ndarray:
         self.inputs = inputs

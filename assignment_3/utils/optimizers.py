@@ -1,6 +1,6 @@
 import numpy as np
 
-from assignment_3.layers import Layer
+from assignment_3.layers import MaxPoolLayer, ReshapeLayer
 from assignment_3.networks import NeuralNetwork
 from assignment_3.utils.loss_functions import LossFunction
 from assignment_3.utils.metrics import classification_accuracy, regression_accuracy
@@ -78,7 +78,9 @@ class MiniBatchOptimizer:
 
     def _update_params(self) -> None:
         for layer in self.neural_network.all_layers:
-            if isinstance(layer, Layer):
+            if not isinstance(layer, ReshapeLayer) and not isinstance(
+                layer, MaxPoolLayer
+            ):
                 layer.weights -= self.learning_rate * layer.d_weights
                 layer.biases -= self.learning_rate * layer.d_biases
         if self.decay:

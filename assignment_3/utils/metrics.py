@@ -10,4 +10,4 @@ def classification_accuracy(y_pred: np.ndarray, y_true: np.ndarray) -> float:
 def regression_accuracy(
     y_pred: np.ndarray, y_true: np.ndarray, precision: float
 ) -> float:
-    return np.mean(np.abs(y_pred - y_true) < precision)
+    return np.mean(np.abs(y_pred - y_true.reshape(y_true.shape[0], -1)) < precision)
