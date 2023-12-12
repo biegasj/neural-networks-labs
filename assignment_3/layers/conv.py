@@ -8,11 +8,11 @@ from assignment_3.utils.activation_functions import ActivationFunction, ReLUActi
 class ConvLayer(Layer):
     def __init__(
         self,
-        channels_in,
-        channels_out,
-        kernel_size,
-        stride=1,
-        padding=0,
+        channels_in: int,
+        channels_out: int,
+        kernel_size: int,
+        stride: int = 1,
+        padding: int = 0,
         activation_function: ActivationFunction = ReLUActivation,
     ):
         self.channels_in = channels_in
@@ -85,7 +85,7 @@ class ConvLayer(Layer):
             )
         return self.activation_function.forward(self.outputs)
 
-    def backward(self, d_values):
+    def backward(self, d_values: np.ndarray) -> np.ndarray:
         _, _, output_height, output_width = d_values.shape
         d_values = self.activation_function.backward(d_values)
         batch_size, channels_in, input_height, input_width = self.inputs.shape

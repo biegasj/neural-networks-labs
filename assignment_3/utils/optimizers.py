@@ -43,7 +43,7 @@ class MiniBatchOptimizer:
         for epoch_index in range(self.epochs):
             for batch_index in range(total_batches):
                 X_batch, y_batch = self._get_batch(batch_index, X, y)
-                y_pred_batch = self.neural_network.forward(X_batch, training=False)
+                y_pred_batch = self.neural_network.forward(X_batch)
 
                 if batch_index % 100 == 0:
                     loss = self.loss_function.calculate(y_pred_batch, y_batch)

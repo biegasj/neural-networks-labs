@@ -39,7 +39,7 @@ class NeuralNetwork:
     def num_hidden_layers(self) -> int:
         return len(self.hidden_layers)
 
-    def forward(self, inputs: np.ndarray, training: bool = True) -> np.ndarray:
+    def forward(self, inputs: np.ndarray) -> np.ndarray:
         outputs = self.input_layer.forward(inputs)
         for layer in self.hidden_layers:
             outputs = layer.forward(outputs)
